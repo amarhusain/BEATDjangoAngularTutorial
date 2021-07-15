@@ -48,6 +48,7 @@ def SaveFile(request):
 
 @csrf_exempt
 def increaseCommission(request):
+    comm = 100
     return JsonResponse('Commission incremente successfully', safe=False)
 
 
