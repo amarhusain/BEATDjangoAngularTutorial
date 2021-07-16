@@ -16,11 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
+from django.views.generic import TemplateView
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^', include('first.urls')),
-    url(r'^employee/', include('EmployeeApp.urls')),
-    url(r'^department/', include('DepartmentApp.urls')),
+    path('departmentapi/', include('DepartmentApp.urls')),
+    path('employeeapi/', include('EmployeeApp.urls')),
+    path('', TemplateView.as_view(template_name='index.html')),
+
 ]
