@@ -30,7 +30,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', cast=bool)
 
 # ALLOWED_HOSTS = ['shareekbackend.herokuapp.com']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'myshareek.herokuapp.com']
 CORS_ORIGIN_ALLOW_ALL = True
 
 # Application definition
@@ -50,6 +50,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -134,7 +135,7 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
 
-STATIC_ROOT = 'f:/xyz'
+STATIC_ROOT="/var/www/myshareek.herokuapp.com/static/"
 
 
 # Default primary key field type

@@ -1,0 +1,1 @@
+web: gunicorn ShareekBackend.wsgi --log-file -
